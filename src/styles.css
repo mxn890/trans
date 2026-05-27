@@ -1,6 +1,51 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-obsidian: #080808;
+  --color-charcoal: #111111;
+  --color-card-bg: #161616;
+  --color-gold: #C9A84C;
+  --color-gold-light: #e8c96d;
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #080808; color: #fff; }
+.font-display { font-family: 'Playfair Display', serif; }
+
+.luxe-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 300ms ease;
+}
+.luxe-card:hover {
+  border-color: #C9A84C;
+  box-shadow: 0 0 30px rgba(201,168,76,0.15);
+  transform: translateY(-4px);
+}
+.btn-gold {
+  background: #C9A84C; color: #000; font-weight: 600;
+  padding: 0.75rem 2rem; border-radius: 9999px;
+  transition: all 300ms ease; display:inline-flex; align-items:center; gap:.5rem;
+}
+.btn-gold:hover { transform: scale(1.05); background: #e8c96d; }
+.btn-outline-gold {
+  background: transparent; border: 1px solid #C9A84C; color: #C9A84C; font-weight: 600;
+  padding: 0.75rem 2rem; border-radius: 9999px;
+  transition: all 300ms ease; display:inline-flex; align-items:center; gap:.5rem;
+}
+.btn-outline-gold:hover { transform: scale(1.05); background: rgba(201,168,76,0.1); }
+.gold-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.12), transparent 60%);
+}
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.marquee { animation: marquee 25s linear infinite; }
 
 @custom-variant dark (&:is(.dark *));
 
