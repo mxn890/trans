@@ -6,7 +6,7 @@
   },
   "functions": {
     "api/handler.ts": {
-      "runtime": "nodejs@20.13.0"
+      "runtime": "nodejs@18.16.0"
     }
   },
   "rewrites": [
