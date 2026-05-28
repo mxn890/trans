@@ -4,10 +4,15 @@
   "env": {
     "NODE_ENV": "production"
   },
+  "functions": {
+    "api/handler.ts": {
+      "runtime": "nodejs@20.x"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/dist/server/server.js"
+      "destination": "/api/handler"
     }
   ]
 }
