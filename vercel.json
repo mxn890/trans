@@ -3,10 +3,5 @@
   "outputDirectory": "dist/client",
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "dist/server/server.js": {
-      "runtime": "node@20.x"
-    }
   }
 }
