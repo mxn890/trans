@@ -4,14 +4,9 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "functions": {
-    "api/handler.ts": {
-      "runtime": "nodejs@18.16.0"
-    }
-  },
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "\\/(.*)",
       "destination": "/api/handler"
     }
   ]
