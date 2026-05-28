@@ -131,7 +131,8 @@ function Hero() {
         <picture>
           {/* Use the provided hero image placed in `public/assets/hero-limo.jpg` */}
           <source media="(min-width:1024px)" srcSet="https://www.goodwood.com/globalassets/.road--racing/road/news/2020/6-june/list-dan-trent-luxury-cars-2020/bmw-i7-2600.jpg?rxy=0.5,0.5" />
-          <source media="(min-width:640px)" srcSet="/assets/hero-limo.jpg" />
+          <source media="(min-width:640px)" srcSet="git push origin 
+ain -force" />
           <img src="git push origin 
 ain -force" alt="Luxury limousine — premium black exterior and polished finish" className="w-full h-full object-cover" loading="eager" />
         </picture>
