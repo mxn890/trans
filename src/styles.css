@@ -18,6 +18,20 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: #080808; color: #fff; }
 .font-display { font-family: 'Playfair Display', serif; }
 
+/* Responsive typographic scale for premium feel */
+:root {
+  --fluid-title-min: 28px;
+  --fluid-title-preferred: 6.5vw;
+  --fluid-title-max: 80px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(var(--fluid-title-min), var(--fluid-title-preferred), var(--fluid-title-max));
+  line-height: 1.03;
+}
+
 .luxe-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(201,168,76,0.2);
@@ -36,6 +50,7 @@ body { font-family: 'Inter', sans-serif; background: #080808; color: #fff; }
   transition: all 300ms ease; display:inline-flex; align-items:center; gap:.5rem;
 }
 .btn-gold:hover { transform: scale(1.05); background: #e8c96d; }
+.btn-gold.large { padding: 1rem 2.5rem; font-size: 1.05rem; }
 .btn-outline-gold {
   background: transparent; border: 1px solid #C9A84C; color: #C9A84C; font-weight: 600;
   padding: 0.75rem 2rem; border-radius: 9999px;
@@ -45,6 +60,44 @@ body { font-family: 'Inter', sans-serif; background: #080808; color: #fff; }
 .gold-radial {
   background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.12), transparent 60%);
 }
+/* Mobile menu solid blurred background with subtle gold tint & glow */
+.mobile-menu-bg {
+  position: relative;
+  background-color: rgba(8,8,8,0.95);
+  backdrop-filter: blur(10px);
+  transition: background-color 240ms ease, backdrop-filter 240ms ease;
+  overflow: hidden;
+}
+.mobile-menu-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02) 40%, transparent 70%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.mobile-menu-bg::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(closest-side, rgba(201,168,76,0.06), transparent 40%);
+  filter: blur(18px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Mobile menu specific styles */
+.mobile-menu-nav {
+  padding-top: 1rem;
+}
+.mobile-menu-nav a { font-weight: 600; }
+.mobile-menu-close {
+  background: transparent; border: 1px solid rgba(255,255,255,0.06); padding: 8px; border-radius: 8px; color: #fff; display:inline-flex; align-items:center; justify-content:center;
+}
+.mobile-menu-close:hover { background: rgba(255,255,255,0.03); }
 @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 .marquee { animation: marquee 25s linear infinite; }
 

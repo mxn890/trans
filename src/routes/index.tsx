@@ -88,16 +88,16 @@ function Navbar() {
         <button className="lg:hidden text-white" onClick={() => setOpen(true)}><Menu /></button>
       </div>
       {open && (
-        <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} className="fixed inset-0 bg-[#080808] z-[60] flex flex-col p-8">
+        <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} className="fixed inset-0 z-[60] flex flex-col p-8 mobile-menu-bg">
           <div className="flex justify-between items-center">
             <span className="font-display text-xl text-white"><span className="text-[#C9A84C]">◆</span> OBSIDIAN</span>
-            <button onClick={() => setOpen(false)} className="text-white"><X /></button>
+            <button onClick={() => setOpen(false)} className="mobile-menu-close" aria-label="Close menu"><X /></button>
           </div>
           <nav className="flex flex-col gap-6 mt-16">
             {links.map((l, i) => (
-              <motion.a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}
-                initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0, transition: { delay: i * 0.05 } }}
-                className="font-display text-3xl text-[#C9A84C]">{l}</motion.a>
+                <motion.a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0, transition: { delay: i * 0.05 } }}
+                  className="font-display text-3xl text-white hover:text-[#C9A84C] transition-colors">{l}</motion.a>
             ))}
             <a href="tel:3125550199" className="mt-8 text-white/70 flex items-center gap-2"><Phone size={18} /> (312) 555-0199</a>
             <a href="#quote" onClick={() => setOpen(false)} className="btn-gold mt-4 justify-center">Book Now</a>
@@ -128,22 +128,27 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-32 pb-20">
       <div className="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1920" alt="Luxury chauffeur car at night in Chicago" className="w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 100%)" }} />
+        <picture>
+          {/* Use the provided hero image placed in `public/assets/hero-limo.jpg` */}
+          <source media="(min-width:1024px)" srcSet="/assets/hero-limo.jpg" />
+          <source media="(min-width:640px)" srcSet="/assets/hero-limo.jpg" />
+          <img src="/assets/hero-limo.jpg" alt="Luxury limousine — premium black exterior and polished finish" className="w-full h-full object-cover" loading="eager" />
+        </picture>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.54) 100%)" }} />
       </div>
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <motion.div initial="hidden" animate="show" variants={{ show: { transition: { staggerChildren: 0.12 } } }} className="max-w-3xl">
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C9A84C]/40 bg-[#C9A84C]/10 text-[#C9A84C] text-xs tracking-[0.25em] uppercase">
             ✦ Chicago's Premier Black Car Service
           </motion.div>
-          <motion.h1 variants={fadeUp} className="font-display text-5xl md:text-7xl lg:text-[80px] font-semibold text-white mt-6 leading-[1.05]">
+          <motion.h1 variants={fadeUp} className="hero-title text-white mt-6">
             Experience Chicago<br/>in <span className="text-[#C9A84C] italic">Pure Luxury</span>
           </motion.h1>
           <motion.p variants={fadeUp} className="text-lg md:text-xl text-white/70 mt-6 max-w-xl">
             Professional chauffeurs. Immaculate vehicles. On-time guarantee — every ride, every time.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mt-8">
-            <a href="#quote" className="btn-gold">Book Your Ride →</a>
+            <a href="#quote" className="btn-gold large">Book Your Ride →</a>
             <a href="#fleet" className="btn-outline-gold">View Our Fleet</a>
           </motion.div>
           <motion.div variants={fadeUp} className="flex flex-wrap gap-x-8 gap-y-3 mt-10 text-sm text-white/70">
