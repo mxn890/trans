@@ -12,7 +12,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Obsidian Rides — Chicago's Premier Luxury Chauffeur Service" },
+      { title: "Bc Black Limo — Chicago's Premier Luxury Chauffeur Service" },
       { name: "description", content: "Chicago's #1 luxury chauffeur and limo service. Airport transfers, corporate travel, weddings & events. 24/7 availability. Book in 2 minutes." },
       { property: "og:title", content: "Obsidian Rides — Chicago Luxury Chauffeur" },
       { property: "og:description", content: "Professional chauffeurs. Immaculate vehicles. On-time guarantee — every ride, every time." },
@@ -72,7 +72,7 @@ function Navbar() {
     <header className={`fixed top-9 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0a0a0a]/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : "bg-transparent backdrop-blur-sm"}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="font-display text-xl md:text-2xl text-white tracking-wide flex items-center gap-2">
-          <span className="text-[#C9A84C]">◆</span> OBSIDIAN RIDES
+          <span className="text-[#C9A84C]">◆</span> Bc Black Limo
         </a>
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
@@ -366,7 +366,7 @@ function Areas() {
 const reviews = [
   { stars: 5, text: "The most professional car service I've used in Chicago. My flight was delayed by 2 hours — they tracked it automatically and my driver was perfectly on time. Will never use anyone else.", name: "Michael T.", role: "Corporate Executive · Chicago, IL" },
   { stars: 5, text: "We booked the Sprinter for our wedding party of 12. Everything was flawless — every car on time, drivers in suits, absolutely immaculate vehicles. Made the day even more special.", name: "Sarah & James W.", role: "Wedding Clients" },
-  { stars: 5, text: "Use Obsidian Rides every week for O'Hare transfers. Fixed pricing means no budget surprises and the drivers are always professional. This is exactly what a premium service should feel like.", name: "David R.", role: "Frequent Business Traveler" },
+  { stars: 5, text: "Use Bc Black Limo every week for O'Hare transfers. Fixed pricing means no budget surprises and the drivers are always professional. This is exactly what a premium service should feel like.", name: "David R.", role: "Frequent Business Traveler" },
 ];
 function Testimonials() {
   const [idx, setIdx] = useState(0);
@@ -548,7 +548,7 @@ function Footer() {
           ))}
         </div>
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between gap-3 text-white/45 text-xs">
-          <div>© 2026 Obsidian Rides. All Rights Reserved. Powered with ❤ in Chicago, IL</div>
+          <div>© 2026 Bc Black Limo. All Rights Reserved. Powered with ❤ in Chicago, IL</div>
           <div className="flex gap-4"><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a></div>
         </div>
       </div>
